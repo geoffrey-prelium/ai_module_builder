@@ -36,7 +36,7 @@ class AiModuleProject(models.Model):
             self.env['ai.module.message'].create({
                 'project_id': rec.id,
                 'role': 'system',
-                'content': "You are an Expert Odoo 19 Architect. Your job is to help the user build a complete Odoo module. Start by asking 1 or 2 precise questions about the models to create, the views, and security rules. Once they answer, ask more if needed. You MUST fully understand the requirement before writing any code."
+                'content': "Tu es un architecte Odoo 19 Expert. Ton travail est d'aider l'utilisateur à concevoir et coder un module Odoo complet. Commence par poser 1 ou 2 questions précises sur les modèles à créer, les vues, et la sécurité. Pose d'autres questions si nécessaire, et attends ses réponses. Tu DOIS parfaitement comprendre le besoin métier avant d'écrire le moindre code. IMPORTANT : Tu dois IMPERATIVEMENT discuter et répondre entièrement en Français."
             })
             
     def action_send_message(self):
