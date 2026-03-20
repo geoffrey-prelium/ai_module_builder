@@ -32,7 +32,7 @@
                         <page string="Architect Chat" name="chat_page" invisible="state == 'draft'">
                             <group>
                                 <!-- History -->
-                                <field name="message_ids" readonly="1" nolabel="1" colspan="2">
+                                <field name="ai_message_ids" readonly="1" nolabel="1" colspan="2">
                                     <list string="Conversation">
                                         <field name="create_date"/>
                                         <field name="role" widget="badge"/>

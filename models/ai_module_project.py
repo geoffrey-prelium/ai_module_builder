@@ -22,7 +22,7 @@ class AiModuleProject(models.Model):
         ('openai', 'OpenAI GPT-4o'),
     ], string='AI Model', default='gemini-2.5-flash', required=True)
 
-    message_ids = fields.One2many('ai.module.message', 'project_id', string='Conversation')
+    ai_message_ids = fields.One2many('ai.module.message', 'project_id', string='Conversation')
     
     technical_name = fields.Char(string='Technical Module Name', help='e.g., custom_crm_addon', tracking=True)
     zip_attachment_id = fields.Many2one('ir.attachment', string='Generated Module (.zip)', copy=False)
@@ -73,7 +73,7 @@ class AiModuleProject(models.Model):
         company = self.env.company
         model = self.llm_provider
         
-        history = self.message_ids.sorted('create_date')
+        history = self.ai_message_ids.sorted('create_date')
         
         if model.startswith('gemini'):
             api_key = self.env['ir.config_parameter'].sudo().get_param('ai_module_builder.gemini_api_key') or company.ai_agent_gemini_api_key
