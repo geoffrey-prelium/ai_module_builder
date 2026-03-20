@@ -10,10 +10,10 @@
                 <app data-string="AI Module Builder" string="AI Module Builder" name="ai_module_builder" groups="base.group_system">
                     <block title="API Integration" name="api_integration_setting_container">
                         <setting id="openai_api_key_setting" title="OpenAI API Key" help="Required for ChatGPT models">
-                            <field name="module_builder_openai_api_key"/>
+                            <field name="ai_builder_openai_api_key"/>
                         </setting>
                         <setting id="gemini_api_key_setting" title="Google Gemini API Key" help="Required for Gemini models">
-                            <field name="module_builder_gemini_api_key"/>
+                            <field name="ai_builder_gemini_api_key"/>
                         </setting>
                     </block>
                 </app>
