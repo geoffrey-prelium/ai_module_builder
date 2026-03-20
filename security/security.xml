@@ -8,12 +8,4 @@
         <field name="name">AI Module Builder: Manager</field>
         <field name="implied_ids" eval="[(4, ref('ai_module_builder.group_ai_module_builder_user'))]"/>
     </record>
-
-    <!-- Auto-assign to Admin users -->
-    <record id="base.user_admin" model="res.users">
-        <field name="groups_id" eval="[(4, ref('ai_module_builder.group_ai_module_builder_manager'))]"/>
-    </record>
-    <record id="base.user_root" model="res.users">
-        <field name="groups_id" eval="[(4, ref('ai_module_builder.group_ai_module_builder_manager'))]"/>
-    </record>
 </odoo>

@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//form" position="inside">
-                <app data-string="AI Module Builder" string="AI Module Builder" name="ai_module_builder" groups="ai_module_builder.group_ai_module_builder_manager">
+                <app data-string="AI Module Builder" string="AI Module Builder" name="ai_module_builder" groups="base.group_system">
                     <block title="API Integration" name="api_integration_setting_container">
                         <setting id="openai_api_key_setting" title="OpenAI API Key" help="Required for ChatGPT models">
                             <field name="module_builder_openai_api_key"/>
@@ -32,7 +32,7 @@
         name="Configuration"
         parent="ai_module_builder_menu_root"
         sequence="100"
-        groups="ai_module_builder.group_ai_module_builder_manager"/>
+        groups="base.group_system"/>
 
     <menuitem id="ai_module_builder_menu_settings"
         name="Settings"

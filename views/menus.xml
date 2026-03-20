@@ -4,5 +4,5 @@
               name="AI Builder"
               web_icon="ai_module_builder,static/description/icon.png"
               sequence="55"
-              groups="ai_module_builder.group_ai_module_builder_user"/>
+              groups="base.group_user"/>
 </odoo>
