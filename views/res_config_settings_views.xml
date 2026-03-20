@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_ai_module_builder" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.ai.module.builder</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="90"/>
+        <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form" position="inside">
+                <app data-string="AI Module Builder" string="AI Module Builder" name="ai_module_builder" groups="ai_module_builder.group_ai_module_builder_manager">
+                    <block title="API Integration" name="api_integration_setting_container">
+                        <setting id="openai_api_key_setting" title="OpenAI API Key" help="Required for ChatGPT models">
+                            <field name="module_builder_openai_api_key"/>
+                        </setting>
+                        <setting id="gemini_api_key_setting" title="Google Gemini API Key" help="Required for Gemini models">
+                            <field name="module_builder_gemini_api_key"/>
+                        </setting>
+                    </block>
+                </app>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ai_module_builder_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Settings</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'ai_module_builder', 'bin_size': False}</field>
+    </record>
+
+    <menuitem id="ai_module_builder_menu_configuration"
+        name="Configuration"
+        parent="ai_module_builder_menu_root"
+        sequence="100"
+        groups="ai_module_builder.group_ai_module_builder_manager"/>
+
+    <menuitem id="ai_module_builder_menu_settings"
+        name="Settings"
+        parent="ai_module_builder_menu_configuration"
+        sequence="10"
+        action="ai_module_builder_config_settings_action"/>
+</odoo>

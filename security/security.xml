@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="group_ai_module_builder_user" model="res.groups">
+        <field name="name">AI Module Builder: User</field>
+        <field name="category_id" ref="base.module_category_productivity"/>
+    </record>
+
+    <record id="group_ai_module_builder_manager" model="res.groups">
+        <field name="name">AI Module Builder: Manager</field>
+        <field name="category_id" ref="base.module_category_productivity"/>
+        <field name="implied_ids" eval="[(4, ref('group_ai_module_builder_user'))]"/>
+    </record>
+</odoo>
